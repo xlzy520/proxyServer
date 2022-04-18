@@ -1,0 +1,23 @@
+{
+  "name": "express-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon ./bin/www",
+    "build": "webpack --progress",
+    "preview": "webpack --progress && cross-env mode=preview npm run start",
+    "deploy": "npm run build && sls deploy"
+  },
+  "author": "xlzy520",
+  "license": "MIT",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.2.0"
+  }
+}
