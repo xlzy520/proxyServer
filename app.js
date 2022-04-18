@@ -20,7 +20,7 @@ app.all('*', (req, res, next) => {
 });
 
 axios.default.defaults.baseURL =
-  'https://masterep.sampras.cn/index.php/factory-api/';
+  'http://masterep.sampras.cn/index.php/factory-api/';
 const defaultHeaders = {
   authorization: 'Basic bWFzdGVyOnBNUkFnQWpNZTFiSW5qMUI=',
 };
