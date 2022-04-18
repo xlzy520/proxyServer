@@ -2,10 +2,9 @@
   "name": "express-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "dist/dist.js",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "build": "webpack --progress",
     "preview": "webpack --progress && cross-env mode=preview npm run start",
     "deploy": "npm run build && sls deploy",
     "analyzer": "cross-env use_analyzer=true npm run build"
