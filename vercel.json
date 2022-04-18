@@ -2,6 +2,5 @@
   "version": 2,
   "env": {
   },
-  "builds": [{ "src": "app.js", "use": "@now/node" }],
-  "routes": [{ "src": "(.*)", "dest": "app.js" }]
+  "routes": [{ "src": "(.*)", "dest": "dist/dist.js" }]
 }
