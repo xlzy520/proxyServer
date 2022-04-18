@@ -1,6 +1,6 @@
 const express = require('express');
-const path = require('path');
-const https = require('https');
+// const path = require('path');
+// const https = require('https');
 // const cookieParser = require('cookie-parser');
 
 const axios = require('axios');
@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 app.all('*', (req, res, next) => {
   if (req.method === 'OPTIONS') {
@@ -24,9 +24,9 @@ axios.default.defaults.baseURL =
 const defaultHeaders = {
   authorization: 'Basic bWFzdGVyOnBNUkFnQWpNZTFiSW5qMUI=',
 };
-axios.default.defaults.httpsAgent = new https.Agent({
-  rejectUnauthorized: false,
-});
+// axios.default.defaults.httpsAgent = new https.Agent({
+//   rejectUnauthorized: false,
+// });
 
 const axiosGet = (req) => {
   return axios.get(req.path, {
