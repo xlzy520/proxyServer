@@ -4,16 +4,19 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon ./bin/www",
+    "start": "nodemon ./bin/www",
     "build": "webpack --progress",
     "preview": "webpack --progress && cross-env mode=preview npm run start",
-    "deploy": "npm run build && sls deploy"
+    "deploy": "npm run build && sls deploy",
+    "analyzer": "cross-env use_analyzer=true npm run build"
   },
   "author": "xlzy520",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.26.1",
     "cross-env": "^7.0.3",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7",

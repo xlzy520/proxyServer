@@ -4,12 +4,8 @@
  * Module dependencies.
  */
 
-var app;
-if (process.env.mode === 'preview') {
-  app = require('../dist/pro');
-} else {
-  app = require('../sls');
-}
+var app = require('../app');
+
 
 var http = require('http');
 
