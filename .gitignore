@@ -108,3 +108,5 @@ typings/
 build
 
 .vercel
+
+dist

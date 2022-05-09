@@ -1,11 +1,14 @@
 const path = require('path');
 const analyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-
+const plugins = [];
 const useAnalyzer = process.env.use_analyzer === 'true';
-const plugins = useAnalyzer ? [new analyzer()] : [];
+if (useAnalyzer) {
+  plugins.push(new analyzer());
+}
+
 module.exports = {
-  entry: './bin/www', // 单入口
+  entry: './app.js', // 单入口
   mode: 'production',
   output: {
     filename: 'dist.js',

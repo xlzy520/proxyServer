@@ -19,6 +19,9 @@ app.all('*', (req, res, next) => {
   next();
 });
 
+var requestIp = require('request-ip');
+app.use(requestIp.mw())
+
 axios.default.defaults.baseURL =
   'http://masterep.sampras.cn/index.php/factory-api/';
 const defaultHeaders = {
@@ -46,16 +49,22 @@ const axiosPost = (req) => {
   });
 };
 
-app.post('*', async (req, res) => {
-  const result = await axiosPost(req);
-  res.send(result.data);
-  res.end();
-});
+// app.post('*', async (req, res) => {
+//   const result = await axiosPost(req);
+//   res.send(result.data);
+//   res.end();
+// });
+//
+// app.get('*', async (req, res) => {
+//   const result = await axiosGet(req);
+//   res.send(result.data);
+//   res.end();
+// });
 
-app.get('*', async (req, res) => {
-  const result = await axiosGet(req);
-  res.send(result.data);
-  res.end();
+
+app.get('/ip', async (req, res) => {
+  var ip = req.clientIp;
+  res.end(ip + '\n');
 });
 
 module.exports = app;
